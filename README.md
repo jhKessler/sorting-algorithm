@@ -1,4 +1,4 @@
-# sorting-algorithm
+# Sorting algorithm
 Basic sorting algorithm that I created.
 It sorts a list of numbers by their sizes.
 It can sort in both ascending and descending order, depending on what you specify it to do.
