@@ -1,9 +1,4 @@
-import random
-
-def create_list(length, parameter):
-    digits = [i for i in range(parameter)]
-    random_list = random.choices(digits, k=length)
-    return random_list
+from create_list import create_list
 
 def sort_list(list, reversed=False):
     i = 0 if not reversed else len(list) - 1
