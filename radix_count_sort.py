@@ -1,7 +1,7 @@
 from create_list import create_list
 
-# please remember that this sort function can only sort integers not float but does so more efficently using the radix-count sorting algorithm
-def sort_list(list):
+# please remember that this sort function can only sort integers not float but does so more efficently using the radix-count sorting algorithm which allows us to sort using very little computing power
+def sort_list(list, reverse_order=False):
 
     def get_digit_counts(list, position, num_repetitions):
         # list that represents digit counts from 0 - 9
@@ -46,6 +46,7 @@ def sort_list(list):
 
     largest_num = None
     current_iteration = 1
+    # loop thorugh the numbers and sort them by the size of their respective indices
     while True:
         count_list, largest_num = get_digit_counts(list, current_iteration, largest_num)
         index_list = get_element_indices(count_list)
@@ -54,8 +55,13 @@ def sort_list(list):
             break
         else:
             current_iteration += 1
-    
+
+    # reverse list if you want the sorted list in reverse order
+    if reverse_order:
+        list = reversed(list)
+        
     return list
 
-list = create_list(1_000_000, 100)
+list = create_list(1_000_000, 1000)
+# dont print this list as it will crash your IDE or PC, if you want to see the result enter a smaller array, i just used this arraysize to show the effiency of the algorithm
 sorted_list = sort_list(list)
