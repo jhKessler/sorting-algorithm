@@ -2,7 +2,7 @@
 Basic sorting algorithms that I created.
 They sorts a list of numbers by their sizes.
 
-## The first algorithm (comparison sort) works like this and can be used for all dtypes of arrays (int, float, int/float mix) but is not very efficient:
+## The first algorithm (comparison sort) works like this and can be used for all dtypes of arrays (int, float, int/float mix) but is not very efficient when working with larger arrays:
 
 ### 1: It starts at the start or the end of the list, depending on the order you want to sort it.
 ### 2: It takes the first two values and brings them into the right order
