@@ -1,6 +1,5 @@
-import random
+from random import randint
 
 def create_list(length, parameter):
-    digits = [i for i in range(parameter)]
-    random_list = random.choices(digits, k=length)
+    random_list = [randint(0, parameter) for _ in range(length)]
     return random_list

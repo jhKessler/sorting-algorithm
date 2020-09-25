@@ -62,6 +62,8 @@ def sort_list(list, reverse_order=False):
         
     return list
 
-list = create_list(1_000_000, 1000)
+list = create_list(100, 10000)
 # dont print this list as it will crash your IDE or PC, if you want to see the result enter a smaller array, i just used this arraysize to show the effiency of the algorithm
 sorted_list = sort_list(list)
+
+print(sorted_list)
