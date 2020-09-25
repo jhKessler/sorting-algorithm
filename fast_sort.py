@@ -1,6 +1,6 @@
 from create_list import create_list
 
-# please remember that this sort function can only sort integers not float
+# please remember that this sort function can only sort integers not float but does so more efficently using the radix-count sorting algorithm
 def sort_list(list):
 
     def get_digit_counts(list, position, num_repetitions):
@@ -13,7 +13,10 @@ def sort_list(list):
             if first_run:
                 largest_num = num if num > largest_num else largest_num
             str_num = str(num)
-            digit = int(str_num[-position])
+            try:
+                digit = int(str_num[-position])
+            except IndexError:
+                digit = 0
             count_list[digit] += 1
         
         if first_run:
@@ -32,7 +35,10 @@ def sort_list(list):
         # get value of num at position
         for num in reversed(list):
             str_num = str(num)
-            digit = int(str_num[-position])
+            try:
+                digit = int(str_num[-position])
+            except IndexError:
+                digit = 0
             num_position = index_list[digit] - 1
             new_list[num_position] = num
             index_list[digit] -= 1
@@ -41,10 +47,9 @@ def sort_list(list):
     largest_num = None
     current_iteration = 1
     while True:
-        count_list, largest_num = get_digit_counts(list, 1, largest_num)
-        print(largest_num)
+        count_list, largest_num = get_digit_counts(list, current_iteration, largest_num)
         index_list = get_element_indices(count_list)
-        list = rebuild_list(list, index_list, 1)
+        list = rebuild_list(list, index_list, current_iteration)
         if largest_num == current_iteration:
             break
         else:
@@ -52,7 +57,5 @@ def sort_list(list):
     
     return list
 
-list = create_list(10, 20)
-print(list)
+list = create_list(1_000_000, 100)
 sorted_list = sort_list(list)
-print(sorted_list)
