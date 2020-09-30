@@ -10,3 +10,8 @@ They sorts a list of numbers by their sizes.
 ### 4: It keeps iterating through step 3 until it reaches the end of the list and then it returns the sorted list
 
 ## The second algorithm (radix-count) can only sort arrays with integers but is very efficient and can be used to sort huge arrays very easily using not alot of computing power
+
+### 1: It starts at the last digit of every number and counts the amount of 0-9 that are at that position.
+### 2: It gets the index values for the array sorted by the last digit
+### 3: It creates a new list, ordering it by the last digit
+### 4: It repeats the steps above for the next digit, until it has a sorted list.
