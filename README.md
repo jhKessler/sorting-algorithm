@@ -1,5 +1,5 @@
 # Sorting algorithm
-Basic sorting algorithms.
+Sorting algorithm implementations in python.
 They sorts a list of numbers by their sizes.
 
 ## The first algorithm (comparison sort) works like this and can be used for all dtypes of arrays (int, float, int/float mix) but is not very efficient when working with larger arrays:
